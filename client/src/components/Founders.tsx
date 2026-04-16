@@ -8,13 +8,11 @@ export default function Founders() {
       role: 'Fundador & CEO',
       bio: 'Visionário e líder estratégico com foco em inovação em cloud gaming. Responsável pela direção geral e expansão da Oris Cloud.',
       image: '👨‍💼',
-      social: {
-        linkedin: '#',
-      },
+      social: {},
     },
     {
       name: 'Felipe (Z2ky)',
-      role: 'Co-fundador & CTO',
+      role: 'Co-fundador',
       bio: 'Especialista em infraestrutura cloud e otimização de performance. Lidera o desenvolvimento técnico e arquitetura da plataforma.',
       image: '👨‍💻',
       social: {
