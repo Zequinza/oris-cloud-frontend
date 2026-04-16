@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,22 +33,20 @@ export default function Footer() {
     Empresa: [
       { name: 'Sobre Nós', href: '#about' },
       { name: 'Fundadores', href: '#founders' },
-      { name: 'Blog', href: '#' },
-      { name: 'Carreiras', href: '#' },
+      { name: 'Regras do Discord', href: '/rules' },
+      { name: 'Termos de Uso', href: '/terms' },
     ],
-    Legal: [
-      { name: 'Termos de Serviço', href: '#' },
-      { name: 'Política de Privacidade', href: '#' },
-      { name: 'Cookies', href: '#' },
-      { name: 'Contato', href: '#' },
+    Suporte: [
+      { name: 'Discord', href: 'https://discord.gg/3pT7NJGZ97' },
+      { name: 'Email', href: 'mailto:suporte@oriscloud.com.br' },
+      { name: 'Status', href: '#' },
+      { name: 'Documentação', href: '#' },
     ],
   };
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Mail, href: 'mailto:support@oriscloud.com', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/felipe-almeida-7ab062336/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:suporte@oriscloud.com.br', label: 'Email' },
   ];
 
   return (
@@ -76,13 +74,13 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-foreground/60">
                 <Mail size={16} className="text-blue-400" />
-                <a href="mailto:support@oriscloud.com" className="hover:text-blue-400 transition-colors">
-                  support@oriscloud.com
+                <a href="mailto:suporte@oriscloud.com.br" className="hover:text-blue-400 transition-colors">
+                  suporte@oriscloud.com.br
                 </a>
               </div>
               <div className="flex items-center gap-3 text-sm text-foreground/60">
                 <MapPin size={16} className="text-blue-400" />
-                <span>São Paulo, Brasil</span>
+                <span>Brasil</span>
               </div>
             </div>
           </motion.div>
@@ -96,6 +94,8 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="text-sm text-foreground/60 hover:text-blue-400 transition-colors"
                     >
                       {link.name}

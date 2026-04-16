@@ -137,7 +137,7 @@ export default function FAQ() {
             Entre em contato com nossa equipe de suporte via Discord. Estamos sempre prontos para ajudar!
           </p>
           <motion.a
-            href="https://discord.gg/oriscloud"
+            href="https://discord.gg/3pT7NJGZ97"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

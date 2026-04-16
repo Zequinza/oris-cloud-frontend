@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Zap } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 export default function Plans() {
   const plans = [
@@ -17,7 +17,7 @@ export default function Plans() {
         'Suporte por email',
       ],
       highlighted: false,
-      cta: 'Escolher Plano',
+      status: 'esgotado',
     },
     {
       name: 'Pro',
@@ -34,7 +34,7 @@ export default function Plans() {
         'Prioridade em filas',
       ],
       highlighted: true,
-      cta: 'Começar Agora',
+      status: 'esgotado',
     },
     {
       name: 'Ultra',
@@ -52,7 +52,7 @@ export default function Plans() {
         'Acesso a beta features',
       ],
       highlighted: false,
-      cta: 'Escolher Plano',
+      status: 'esgotado',
     },
   ];
 
@@ -95,31 +95,35 @@ export default function Plans() {
           </p>
         </motion.div>
 
+        {/* Alert - Planos Esgotados */}
+        <motion.div
+          variants={itemVariants}
+          className="mb-12 p-4 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center gap-3"
+        >
+          <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+          <div>
+            <p className="font-semibold text-amber-300">Planos Temporariamente Indisponíveis</p>
+            <p className="text-sm text-amber-200/80">Todos os nossos planos estão esgotados no momento. Entre em contato conosco via Discord para ser notificado quando novas vagas forem abertas.</p>
+          </div>
+        </motion.div>
+
         {/* Plans Grid */}
         <motion.div
           variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8 mb-12"
+          className="grid md:grid-cols-3 gap-8 mb-12 opacity-75"
         >
           {plans.map((plan, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
               className={`relative group ${plan.highlighted ? 'md:scale-105' : ''}`}
             >
-              {/* Highlighted Badge */}
-              {plan.highlighted && (
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
-                >
-                  <div className="px-4 py-1 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold flex items-center gap-2">
-                    <Zap size={14} />
-                    Recomendado
-                  </div>
-                </motion.div>
-              )}
+              {/* Esgotado Badge */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+                <div className="px-4 py-1 rounded-full bg-red-500/20 border border-red-500/50 text-red-300 text-sm font-semibold">
+                  Esgotado
+                </div>
+              </div>
 
               {/* Card Background */}
               <div className={`absolute inset-0 bg-gradient-to-br rounded-2xl blur-xl transition-all ${
@@ -146,18 +150,17 @@ export default function Plans() {
                   <span className="text-foreground/60">{plan.period}</span>
                 </div>
 
-                {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-full py-3 rounded-lg font-semibold mb-8 transition-all ${
+                {/* CTA Button - Disabled */}
+                <button
+                  disabled
+                  className={`w-full py-3 rounded-lg font-semibold mb-8 transition-all cursor-not-allowed ${
                     plan.highlighted
-                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-blue-500/50'
-                      : 'border border-blue-500/50 text-foreground hover:bg-blue-500/10'
+                      ? 'bg-gradient-to-r from-blue-500/50 to-cyan-500/50 text-white/50'
+                      : 'border border-blue-500/30 text-foreground/50'
                   }`}
                 >
-                  {plan.cta}
-                </motion.button>
+                  Indisponível
+                </button>
 
                 {/* Features */}
                 <div className="space-y-4">
@@ -170,7 +173,7 @@ export default function Plans() {
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <Check size={18} className="text-blue-400 flex-shrink-0" />
+                      <div className="w-4 h-4 rounded-full bg-blue-400/30 flex-shrink-0" />
                       <span className="text-sm text-foreground/80">{feature}</span>
                     </motion.div>
                   ))}
@@ -180,16 +183,24 @@ export default function Plans() {
           ))}
         </motion.div>
 
-        {/* Comparison Note */}
+        {/* Contact CTA */}
         <motion.div
           variants={itemVariants}
-          className="text-center p-6 rounded-lg bg-blue-500/5 border border-blue-500/20"
+          className="text-center p-8 rounded-lg bg-blue-500/5 border border-blue-500/20"
         >
-          <p className="text-foreground/70">
-            Todos os planos incluem acesso a nossa biblioteca completa de jogos, atualizações mensais e suporte técnico.
-            <br />
-            <span className="text-sm text-foreground/60">Cancele a qualquer momento, sem compromisso.</span>
+          <p className="text-foreground/70 mb-6">
+            Interessado em um de nossos planos? Entre em contato conosco!
           </p>
+          <motion.a
+            href="https://discord.gg/3pT7NJGZ97"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+          >
+            Junte-se ao Discord
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>

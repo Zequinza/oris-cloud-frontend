@@ -1,36 +1,24 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export default function Founders() {
   const founders = [
     {
-      name: 'Felipe Silva',
-      role: 'CEO & Co-founder',
-      bio: 'Especialista em infraestrutura cloud com 10+ anos de experiência em Azure e tecnologias de virtualização.',
+      name: 'Adryan (S2)',
+      role: 'Fundador & CEO',
+      bio: 'Visionário e líder estratégico com foco em inovação em cloud gaming. Responsável pela direção geral e expansão da Oris Cloud.',
       image: '👨‍💼',
       social: {
         linkedin: '#',
-        twitter: '#',
       },
     },
     {
-      name: 'Lucas Martins',
-      role: 'CTO & Co-founder',
-      bio: 'Engenheiro de software com foco em performance e otimização de sistemas distribuídos de alto desempenho.',
+      name: 'Felipe (Z2ky)',
+      role: 'Co-fundador & CTO',
+      bio: 'Especialista em infraestrutura cloud e otimização de performance. Lidera o desenvolvimento técnico e arquitetura da plataforma.',
       image: '👨‍💻',
       social: {
-        linkedin: '#',
-        twitter: '#',
-      },
-    },
-    {
-      name: 'Ana Costa',
-      role: 'COO & Co-founder',
-      bio: 'Estrategista de negócios com experiência em startups de tecnologia e expansão de mercado internacional.',
-      image: '👩‍💼',
-      social: {
-        linkedin: '#',
-        twitter: '#',
+        linkedin: 'https://www.linkedin.com/in/felipe-almeida-7ab062336/',
       },
     },
   ];
@@ -77,7 +65,7 @@ export default function Founders() {
         {/* Founders Grid */}
         <motion.div
           variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-16"
         >
           {founders.map((founder, index) => (
             <motion.div
@@ -106,20 +94,17 @@ export default function Founders() {
 
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
-                  <motion.a
-                    href={founder.social.linkedin}
-                    whileHover={{ scale: 1.2 }}
-                    className="p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors"
-                  >
-                    <Linkedin size={18} className="text-blue-400" />
-                  </motion.a>
-                  <motion.a
-                    href={founder.social.twitter}
-                    whileHover={{ scale: 1.2 }}
-                    className="p-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 transition-colors"
-                  >
-                    <Twitter size={18} className="text-cyan-400" />
-                  </motion.a>
+                  {founder.social.linkedin && (
+                    <motion.a
+                      href={founder.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2 }}
+                      className="p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors"
+                    >
+                      <Linkedin size={18} className="text-blue-400" />
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -129,11 +114,11 @@ export default function Founders() {
         {/* Story */}
         <motion.div
           variants={itemVariants}
-          className="mt-20 p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30"
+          className="p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30"
         >
           <h3 className="text-2xl font-bold mb-4">Nossa História</h3>
           <p className="text-foreground/70 leading-relaxed">
-            Oris Cloud nasceu da paixão por gaming e da visão de democratizar o acesso a jogos de alta qualidade. Nossos fundadores se conheceram em uma conferência de tecnologia cloud e perceberam uma oportunidade única: criar uma plataforma que pudesse trazer a experiência de gaming de próxima geração para todos, independentemente do hardware disponível. Hoje, estamos orgulhosos de servir jogadores em todo o mundo.
+            Oris Cloud nasceu da paixão por gaming e da visão de democratizar o acesso a jogos de alta qualidade. Adryan e Felipe se uniram com o objetivo de criar uma plataforma que pudesse trazer a experiência de gaming de próxima geração para todos, independentemente do hardware disponível. Hoje, estamos orgulhosos de servir jogadores em todo o Brasil e expandindo globalmente.
           </p>
         </motion.div>
       </motion.div>
