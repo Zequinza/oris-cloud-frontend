@@ -17,39 +17,46 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border"
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Minimalista */}
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent"
+          className="flex items-center gap-2"
         >
-          Oris Cloud
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032706170/WMz8HoFpHBf5sKDLPKcovU/m51284p_3f1a6df2.png"
+            alt="Oris Cloud"
+            className="h-8 w-8"
+          />
+          <span className="text-xl font-bold tracking-wider text-white">ORIS</span>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-12">
           {navItems.map((item) => (
             <motion.a
               key={item.name}
               href={item.href}
-              whileHover={{ color: '#00d9ff' }}
-              className="text-foreground/80 hover:text-accent transition-colors"
+              whileHover={{ opacity: 0.7 }}
+              className="text-sm font-medium text-foreground/80 hover:text-white transition-colors"
             >
               {item.name}
             </motion.a>
           ))}
         </nav>
 
-        {/* CTA Button */}
+        {/* CTA Button - Simples e Elegante */}
         <motion.a
-          href="#plans"
+          href="https://discord.gg/3pT7NJGZ97"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+          className="hidden md:block px-6 py-2 bg-white text-black font-semibold rounded-sm hover:bg-gray-200 transition-colors"
         >
-          Começar Agora
+          Discord
         </motion.a>
 
         {/* Mobile Menu Button */}
@@ -74,18 +81,20 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-accent transition-colors"
+                className="text-foreground/80 hover:text-white transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </a>
             ))}
             <a
-              href="#plans"
-              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-white font-medium text-center"
+              href="https://discord.gg/3pT7NJGZ97"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-white text-black font-semibold rounded-sm text-center hover:bg-gray-200 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Começar Agora
+              Discord
             </a>
           </div>
         </motion.nav>
