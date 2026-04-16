@@ -7,8 +7,8 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'Como funciona o cloud gaming?',
-      answer: 'O cloud gaming permite que você jogue em servidores remotos. Você envia seus comandos de controle para o servidor, que executa o jogo e transmite o vídeo de volta para seu dispositivo em tempo real. Isso elimina a necessidade de hardware poderoso no seu computador.',
+      question: 'Como funciona o cloud gaming na Oris?',
+      answer: 'Você traz seus próprios jogos. Nós criamos um snapshot AWS da sua máquina virtual com full stock, permitindo que você tenha controle total. Você acessa via Parsec ou Moonlight e joga como se estivesse em um PC local, mas com poder de processamento na nuvem.',
     },
     {
       question: 'Que internet eu preciso?',
@@ -19,24 +19,24 @@ export default function FAQ() {
       answer: 'Você pode jogar em PC Windows/Mac, notebooks, tablets, smartphones (iOS/Android) e TVs Smart com Chromecast. Usamos os aplicativos Parsec e Moonlight para conectar-se aos servidores.',
     },
     {
-      question: 'Posso jogar offline?',
-      answer: 'Não, o cloud gaming requer uma conexão de internet constante. Você não pode jogar offline, pois o jogo está sendo executado em nossos servidores remotos.',
+      question: 'Onde os servidores estão localizados?',
+      answer: 'Nossas instâncias rodam em São Paulo, Brasil. Isso garante latência mínima para usuários brasileiros e melhor performance geral.',
     },
     {
       question: 'Como é feito o pagamento?',
       answer: 'Aceitamos PIX, cartão de crédito e débito, além de Mercado Pago. O pagamento é recorrente no mesmo dia do mês. Você pode cancelar sua assinatura a qualquer momento sem penalidades.',
     },
     {
-      question: 'Há limite de tempo de jogo?',
-      answer: 'Não há limite de tempo. Você pode jogar quantas horas quiser dentro do seu plano. Cada máquina pode ser usada por até 8 horas contínuas antes de ser reiniciada automaticamente.',
+      question: 'Qual é o horário de atendimento?',
+      answer: 'Oferecemos suporte de segunda a sábado (exceto domingo). Revendedores têm suporte 24/7. Entre em contato via Discord para qualquer dúvida ou problema técnico.',
     },
     {
-      question: 'Posso transferir meus jogos?',
-      answer: 'Seus jogos já estão instalados em nossas máquinas virtuais. Você acessa a biblioteca completa de jogos disponíveis no seu plano. Não é necessário transferir arquivos.',
+      question: 'Posso usar full stock na minha máquina?',
+      answer: 'Sim! Você tem full stock na sua instância AWS. Pode instalar qualquer software, modificar configurações, fazer backup e gerenciar como quiser. É sua máquina virtual completa.',
     },
     {
       question: 'E se houver lag ou problemas de conexão?',
-      answer: 'Nossa equipe de suporte está disponível 24/7 via Discord. Temos servidores em múltiplas regiões para otimizar sua latência. Se você tiver problemas, entre em contato conosco imediatamente.',
+      answer: 'Nossa equipe de suporte está disponível via Discord. Temos servidores em São Paulo otimizados para latência mínima. Se você tiver problemas, entre em contato conosco imediatamente.',
     },
   ];
 

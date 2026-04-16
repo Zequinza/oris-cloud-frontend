@@ -91,7 +91,7 @@ export default function Plans() {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Planos de Assinatura</h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Escolha o plano perfeito para sua experiência de gaming. Todos incluem acesso a nossa biblioteca completa de jogos.
+            Escolha o plano perfeito para sua experiência de gaming. Você traz seus próprios jogos e nós criamos o snapshot AWS com full stock.
           </p>
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function Plans() {
           <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
           <div>
             <p className="font-semibold text-amber-300">Planos Temporariamente Indisponíveis</p>
-            <p className="text-sm text-amber-200/80">Todos os nossos planos estão esgotados no momento. Entre em contato conosco via Discord para ser notificado quando novas vagas forem abertas.</p>
+            <p className="text-sm text-amber-200/80">Todos os nossos planos estão esgotados no momento. Entre em contato conosco via Discord para ser notificado quando novas vagas forem abertas. Suporte: Seg-Sab (exceto domingo). Revendedores: 24/7.</p>
           </div>
         </motion.div>
 

@@ -3,7 +3,7 @@ import {
   Zap,
   Globe,
   Lock,
-  Smartphone,
+  Cloud,
   Cpu,
   Headphones,
   TrendingUp,
@@ -15,12 +15,12 @@ export default function Features() {
     {
       icon: Zap,
       title: 'Sem PC Gamer Caro',
-      description: 'Jogue em qualquer dispositivo sem investir em hardware de alta performance.',
+      description: 'Acesse máquinas virtuais poderosas sem investir em hardware caro. Tudo na nuvem.',
     },
     {
       icon: Globe,
-      title: 'Acesso Global',
-      description: 'Servidores em múltiplas regiões para melhor latência onde quer que você esteja.',
+      title: 'Servidor em São Paulo',
+      description: 'Instâncias rodando em São Paulo para latência mínima e melhor performance no Brasil.',
     },
     {
       icon: Lock,
@@ -28,9 +28,9 @@ export default function Features() {
       description: 'Seus dados e sessões são protegidos com criptografia de ponta a ponta.',
     },
     {
-      icon: Smartphone,
-      title: 'Qualquer Dispositivo',
-      description: 'Jogue no PC, notebook, tablet, celular ou TV Smart com a mesma qualidade.',
+      icon: Cloud,
+      title: 'Traga Seus Jogos',
+      description: 'Você traz seus próprios jogos. Oris cria o snapshot AWS e você tem full stock para fazer o que quiser.',
     },
     {
       icon: Cpu,
@@ -39,8 +39,8 @@ export default function Features() {
     },
     {
       icon: Headphones,
-      title: 'Suporte 24/7',
-      description: 'Comunidade ativa e equipe técnica pronta para ajudar a qualquer hora.',
+      title: 'Suporte Técnico',
+      description: 'Equipe pronta para ajudar. Seg-Sab (exceto domingo). Revendedores têm suporte 24/7.',
     },
     {
       icon: TrendingUp,

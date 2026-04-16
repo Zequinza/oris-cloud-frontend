@@ -124,10 +124,10 @@ export default function About() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-border"
         >
           {[
-            { label: 'Usuários Ativos', value: '50K+' },
-            { label: 'Jogos Disponíveis', value: '1000+' },
+            { label: 'Membros Discord', value: '+100' },
+            { label: 'Snapshot AWS', value: 'Full Stock' },
             { label: 'Uptime', value: '99.9%' },
-            { label: 'Regiões', value: '15+' },
+            { label: 'Região', value: 'São Paulo' },
           ].map((stat, index) => (
             <motion.div
               key={index}
