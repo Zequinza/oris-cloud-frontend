@@ -1,0 +1,7 @@
+server/
+.git/
+.gitignore
+node_modules/
+.env
+.env.local
+.manus-logs/
